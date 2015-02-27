@@ -1,11 +1,11 @@
 oodls v2.0
 ==========
-This are the preliminary docs for the Oodls project.
+These are the preliminary docs for the Oodls project.
 This is a reboot of a demo version: [github](https://github.com/Callisto13/Oodls) | [site](http://www.oodls.io/)
 
 
 
-Stage 1: MVP
+Stage 1: Skateboard MVP
 ------------
 First priorites:
 * an about page to inform people and tell them what the site's about
