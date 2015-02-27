@@ -1,7 +1,7 @@
 oodls v2.0
 ==========
 This are the preliminary docs for the Oodls project.
-This is a reboot of a demo version: [github](https://github.com/Callisto13/Oodls) | [site](www.oodls.io)
+This is a reboot of a demo version: [github](https://github.com/Callisto13/Oodls) | [site](http://www.oodls.io/)
 
 
 
