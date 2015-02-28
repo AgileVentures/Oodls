@@ -6,5 +6,5 @@ Feature: The Homepage
   Scenario: Learning about the cause
     Given I am on the homepage
     And I want to find out more about Oodls
-    When I click on About Me
+    When I click on About Oodls
     Then I should be able to learn about Oodls
