@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/AgileVentures/Oodls/badges/gpa.svg)](https://codeclimate.com/github/AgileVentures/Oodls) [![Test Coverage](https://codeclimate.com/github/AgileVentures/Oodls/badges/coverage.svg)](https://codeclimate.com/github/AgileVentures/Oodls)
+
 Oodls v2.0
 ==========
 These are the preliminary docs for the Oodls project.
