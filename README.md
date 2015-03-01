@@ -1,59 +1,62 @@
-oodls v2.0
+Oodls v2.0
 ==========
 These are the preliminary docs for the Oodls project.
 This is a reboot of a demo version: [github](https://github.com/Callisto13/Oodls) | [site](http://www.oodls.io/)
 
+### About Oodls
+Coming soon...
 
 
-Stage 1: Skateboard MVP
-------------
-First priorites:
-* an about page to inform people and tell them what the site's about
-* email signup - probably MailChimp list
+### Get Involved
+Oodls is an open source charity project, so if you want to do something nice for nothing more than street cred, checkout our [pivotal tracker](https://www.pivotaltracker.com/n/projects/1280286), see the [plan thus far](), and fork this repo! We accept contributions from those of any skill level and, as an [Agile Ventures](http://www.agileventures.org/projects/oodls) project, welcome anyone who wants to learn.
 
-####As a charity, I want to be able to:
-* sign up for the site, so that I can receive food donations: organisation name, email, password
-* create listings, so that conrtributors can find me and give me food
+To make regular contributions, communicate with the rest of the team and keep up with developments, head over to [Agile Ventures](http://agileventures.org), and sign up for a free account and an invitation to our [Slack](https://slack.com/) channel.
 
-####As a contributor, I want to be able to:
-* find out more about the cause, so that I can decide whether or not to contribute
-* browse charity listings, so that I can find a charity to contribute food to
-
-Stage 2: Scooter
-----------------
-####As a charity, I want to be able to:
-* edit my listing, so that I can keep my details up to date and ensure that I keep receiving contributions
-* include my address, food requirements, opening hours, and main contact in my listings, so that people know when to donate, what to donate and who to contact in the event of queries
-* contact the site administrator with any queries, so that I'm completely clear about the site and how to use it, and can report any problems
-
-####As a contributor, I want to be able to:
-* view charities on a map, so that I can easily assess which one is easiest to get to
+#### Contributing basics:
+Oodls is a Ruby-based app running on [Sinatra](https://github.com/sinatra/sinatra). Our database is [PostgreSQL](http://www.postgresql.org/).
+To get started;
+  
+  * make sure you have ruby stuff and postgres installed on your machine
+  * create a project directory, with a remote to your github fork
+  * branch off development (to whatever)
+  * and then run the following commands:
 
 
-Futher User stories
--------------------
-####As a charity, I want to be able to:
-* add my contribution requirements, so that I don't receive unwanted contributions
-* include my logo and description, so people will recognise me/can form a relationship with me
-* remove myself from the site, so that I can stop receiving contributions if I no longer need them
-* email previous contributors, so that I can raise emergency contributions
-* place an alert/banner on the site, so that I can raise emergency contributions - central heating boost button
-* reward contributors, so that I can encourage future contributions
-* post information about the contributions I've received, so that I can inform people about what we need - and whether there is a shortfall (and what we're lacking) - and enthuse about previous contributions to encourage further contributions and motivate contributors
-* quickly and easily update on a daily basis, what I require so that contributors can see what I need
+~~~
+  ... $ psql
+~~~
 
-####As a contributor, I want to be able to:
-* see a list of charities, so that I can make a contribution
-* sort the list of charities based on their proximity to me, so that I can find the nearest one that will accept my contribution
-* get directions to any given charity, so that I can get there easily, without having to manually look the charity up on Google Maps
-* share my contributions on Twitter and Facebook, so that I can get my friends and family involved
-* flag up a charity to site administrators, so that dodgy charity listings can be removed
-* sign up to receive alerts from charities nearby when they are short on food, so that I can help out when they are in need of food
+This should take you into your database server where you can create your test & development databases;
 
-####As a site administrator, I want to be able to:
-* remove dodgy charity listings from the site, so that the site remains trust-worthy and listings are reliable
-* block user accounts from the site, so that people can't keep posting dodgy listings
-* ensure that users signing up to the site are real people, so that oodls doesn't end up riddled with spam bots
-* publicise the site and it's cause, to get more people using it and drive up contributions
-* blog about the site activity,as a way to publicise the site, and get contributors and charities motivated
-* send out alerts to site users/charities, to inform them about changes to the site and keep them engaged
+~~~
+  ... =# CREATE DATABASE "oodls_test";
+  ... =# CREATE DATABASE "oodls_development";
+  ... =# \q
+~~~
+
+After that from your project root run:
+
+~~~
+  ... $ bundle
+  ... $ cucumber && rspec
+~~~
+
+Yes! That's correct, we test EVERYTHING at team Oodls. We also love pair programming and peer code reviews.
+
+Therefore, these 'rules' apply to all contributors (please). All code you write MUST be TTD (unless you are tackling map-related JavaScript, which could be forgiven... maybe). If you break a test you didn't write, fix it before you push it up. The testing frameworks we use are [RSpec](https://github.com/rspec/rspec-core) & [Cucumber](https://github.com/cucumber/cucumber/wiki) (with some [Capybara](https://github.com/jnicklas/capybara)). If you want to use something else for your tests, go for it. Pull requests will not be merged if code is untested or those tests are red.
+
+If you can, find someone to pair with, remotely or whatever - if you can't, make as much noise as possible about what you are doing/intend to do in the Oodls Slack channel.
+
+And last, but not least: keep it neat. Refactor.
+
+To see your stuff live, run:
+
+~~~
+	... $ rackup
+~~~
+
+which will run the app on your local server, usually from port 9292.
+
+When you are done, push your stuff to your github fork, ask some random on the team to take a look through your code, and submit a pull request.
+
+Minor stuff will be merged in and deployed pretty much automatically (so long as test are passing, obvs). Major changes need a peer review as well before they go anywhere. Anyone on the team can do this, and reviewers just need to post in Slack when they are done.
