@@ -9,11 +9,12 @@ class Oodls < Sinatra::Base
   end
 
   post '/charity' do
-  	User.create(:organisation => params[:organisation],
-  							:contact_name => params[:contact_name],
-  							:email => params[:email],
-  							:password => params[:password])
-  	redirect to '/charity'
+  	user = User.create(:organisation => params[:organisation],
+  						         :contact_name => params[:contact_name],
+  							       :email => params[:email],
+  							       :password => params[:password])
+    session[:user_id] = user.id
+  	erb :charity
   end
 
 end

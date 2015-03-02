@@ -134,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bcrypt-ruby
   capybara
   codeclimate-test-reporter
   cucumber

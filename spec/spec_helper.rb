@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test'
-require 'capybara/rspec'
 require './lib/app.rb'
+require 'sinatra'
+require 'capybara/rspec'
 require 'database_cleaner'
 #require "codeclimate-test-reporter"
 #CodeClimate::TestReporter.start
