@@ -4,12 +4,4 @@ class Oodls < Sinatra::Base
     erb :index
   end
 
-  get '/charity' do
-  	erb :charity
-  end
-
-  get '/charity/signup' do
-  	erb :signup
-  end
-
 end

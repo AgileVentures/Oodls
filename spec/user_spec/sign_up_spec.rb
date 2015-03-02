@@ -25,6 +25,7 @@ feature 'User signing up' do
 		fill_in :email, :with=>'test@test.com'
 		fill_in :password, :with=>'password'
 		click_button 'Sign up'
+		expect(User.first.organisation).to eq 'test charity'
 	end
 
 end
