@@ -10,4 +10,21 @@ feature 'User signing up' do
 		expect(page).to have_content 'Sign in'
 	end
 
+	scenario 'should see sign up form' do
+		visit '/charity'
+		click_link 'Sign up'
+		expect(page).to have_content 'Email'
+		expect(page).to have_content 'Password'
+	end
+
+	scenario 'should be able to sign up' do
+		visit '/charity'
+		click_link 'Sign up'
+		fill_in :organisation, :with=>'test charity'
+		fill_in :contact_name, :with=>'test name'
+		fill_in :email, :with=>'test@test.com'
+		fill_in :password, :with=>'password'
+		click_button 'Sign up'
+	end
+
 end

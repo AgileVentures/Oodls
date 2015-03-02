@@ -8,4 +8,8 @@ class Oodls < Sinatra::Base
   	erb :charity
   end
 
+  get '/charity/signup' do
+  	erb :signup
+  end
+
 end
