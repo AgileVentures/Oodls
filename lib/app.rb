@@ -1,19 +1,16 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/partial'
 require 'data_mapper'
-require_relative 'model/user.rb'
-
-env = ENV['RACK_FLASH'] || 'development'
-
-DataMapper.setup(:default, "postgres://localhost/oodls_#{env}")
-
-DataMapper.finalize
-DataMapper.auto_upgrade!
-
-enable :sessions
-set :session_secret, 'super secret'
+require 'sinatra/flash'
+require_relative 'model/user'
+require_relative 'data_mapper_setup'
 
 class Oodls < Sinatra::Base
+
+	enable :sessions
+	register Sinatra::Flash
+	set :session_secret, 'super secret'
   require_relative 'helpers/helper.rb'
 
   set :root, File.dirname(__FILE__)

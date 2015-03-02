@@ -18,16 +18,16 @@ feature 'User signing up' do
 	end
 
 	scenario 'should be able to sign up' do
-		visit '/charity'
-		click_link 'Sign up'
-		fill_in :organisation, :with => 'test charity'
-		fill_in :contact_name, :with => 'test name'
-		fill_in :email, :with => 'test@test.com'
-		fill_in :password, :with => 'password'
-		click_button 'Sign up'
+		sign_up
 		expect(User.first.organisation).to eq 'test charity'
 		expect(current_path).to eq '/charity'
 		expect(page).to have_content 'Welcome test charity'
+	end
+
+	scenario 'should be notified if passwords don\'t match' do
+		expect{ sign_up_mismatch_password }.to change(User, :count).by(0)
+		expect(current_path).to eq '/charity/signup'	
+		expect(page).to have_content 'Your passwords do not match'
 	end
 
 end
