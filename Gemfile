@@ -4,9 +4,9 @@ gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
-gem 'rack-flash3'
+gem 'bcrypt-ruby'
 gem 'sinatra-partial'
-
+gem 'sinatra-flash'
 gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
