@@ -16,20 +16,7 @@ class Oodls < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :views, Proc.new { File.join(root, "/views") }
 
-  get '/charity/signin' do
-    erb :signin
-  end
 
-  post '/charity/signin'do
-    email, password = params[:email], params[:password]
-    user = User.authenticate(email, password)
-    p user
-    if user
-      session[:user_id] = user.id
-      flash[:notice] = 'Logged in Succesfully'
-      redirect('/')
-    end
-  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
@@ -38,3 +25,4 @@ end
 require_relative 'controllers/application.rb'
 require_relative 'controllers/about_oodls.rb'
 require_relative 'controllers/user.rb'
+require_relative 'controllers/sign_in.rb'
