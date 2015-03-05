@@ -21,4 +21,9 @@ feature 'Existing User sign in' do
     expect(page).to have_content 'Logged in Successfully'
   end
 
+  scenario 'should be notified if login details are incorrect' do
+    sign_in_wrong_details      
+    expect(page).to have_content 'Your email or password is incorrect'
+  end 
+
 end

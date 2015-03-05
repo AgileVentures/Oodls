@@ -11,6 +11,9 @@ class Oodls < Sinatra::Base
       session[:user_id] = user.id
       flash[:notice] = 'Logged in Successfully'
       redirect('/')
+    else
+      flash[:notice] = 'Your email or password is incorrect'
+      redirect('/charity/signin')
     end
   end
 
