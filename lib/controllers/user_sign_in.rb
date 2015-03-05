@@ -9,7 +9,6 @@ class Oodls < Sinatra::Base
     user = User.authenticate(email, password)
     if user
       session[:user_id] = user.id
-      flash[:notice] = 'Logged in Successfully'
       redirect('/')
     else
       flash[:notice] = 'Your email or password is incorrect'
@@ -18,7 +17,7 @@ class Oodls < Sinatra::Base
   end
 
   get '/charity/signout' do
-  	flash[:notice] = 'goodbye!'
+  	flash[:notice] = 'Goodbye!'
   	session[:user_id] = nil
     redirect('/')
   end

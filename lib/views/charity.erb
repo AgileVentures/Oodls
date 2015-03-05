@@ -1,10 +1,4 @@
-<% if current_user %>
-  Welcome <%= current_user.organisation %>
-	<form id='log-out' method='get' action='/charity/signout'>
-		<input type='hidden' name='_method' value='delete'>
-		<input type='submit' value='log out' class='button'>
-	</form>
-<% else %>
+<% if !current_user %>
   <a href="/charity/signup">Sign up</a>
   <a href="/charity/signin">Sign in</a>
 <% end %>

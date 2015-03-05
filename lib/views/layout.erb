@@ -3,6 +3,14 @@
   <head>
   </head>
   <body>
+    <% if current_user %>
+      Welcome <%= current_user.organisation %>
+	    <form id='log-out' method='get' action='/charity/signout'>
+		    <input type='hidden' name='_method' value='delete'>
+		    <input type='submit' value='Sign out' class='button'>
+	    </form>
+    <% end %>
+
   	<% if flash[:notice] %>
   		<div id='flash' class='notice'>
   			<%= flash[:notice] %>
