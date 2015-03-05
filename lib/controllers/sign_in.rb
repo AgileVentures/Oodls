@@ -7,7 +7,6 @@ class Oodls < Sinatra::Base
   post '/charity/signin'do
     email, password = params[:email], params[:password]
     user = User.authenticate(email, password)
-    p user
     if user
       session[:user_id] = user.id
       flash[:notice] = 'Logged in Succesfully'
