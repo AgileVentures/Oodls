@@ -20,6 +20,16 @@ class Oodls < Sinatra::Base
     erb :signin
   end
 
+  post '/charity/signin'do
+    email, password = params[:email], params[:password]
+    user = User.authenticate(email, password)
+    if user
+      session[:user_id] = user.id
+      flash[:notice] = 'Logged in Succesfully'
+      redirect('/')
+    end
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
