@@ -19,3 +19,11 @@ def sign_up_mismatch_password
 	fill_in :password_confirmation, :with => 'wrong'
 	click_button 'Sign up'
 end
+
+def sign_in
+  visit '/charity'
+  click_link 'Sign in'
+  fill_in :email, :with => 'test@test.com'
+  fill_in :password, :with => 'password'
+  click_button 'Sign in'
+end

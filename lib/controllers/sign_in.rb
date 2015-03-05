@@ -9,7 +9,7 @@ class Oodls < Sinatra::Base
     user = User.authenticate(email, password)
     if user
       session[:user_id] = user.id
-      flash[:notice] = 'Logged in Succesfully'
+      flash[:notice] = 'Logged in Successfully'
       redirect('/')
     end
   end
