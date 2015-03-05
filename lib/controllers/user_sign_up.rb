@@ -17,7 +17,7 @@ class Oodls < Sinatra::Base
   							       :password_confirmation => params[:password_confirmation])
     if user.save
 	    session[:user_id] = user.id
-	  	erb :charity
+	  	erb :charity_homepage
 	  else
 	  	flash[:notice] = "Your passwords do not match"
 	  	redirect '/charity/signup'

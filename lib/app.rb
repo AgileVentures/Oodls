@@ -8,6 +8,7 @@ require_relative 'controllers/application.rb'
 require_relative 'controllers/about_oodls.rb'
 require_relative 'controllers/user_sign_up.rb'
 require_relative 'controllers/user_sign_in.rb'
+require_relative 'controllers/listings.rb'
 require_relative './data_mapper_setup.rb'
 require_relative 'helpers/helper.rb'
 

@@ -7,7 +7,7 @@
     <a href="/">Oodls</a>    
   </header>
     <% if current_user %>
-      Welcome <%= current_user.organisation %>
+      Welcome <a href='/charity/home'><%=current_user.organisation %></a>
 	    <form id='log-out' method='get' action='/charity/signout'>
 		    <input type='hidden' name='_method' value='delete'>
 		    <input type='submit' value='Sign out' class='button'>

@@ -9,7 +9,8 @@ class Oodls < Sinatra::Base
     user = User.authenticate(email, password)
     if user
       session[:user_id] = user.id
-      redirect('/')
+      #redirect('/')
+      erb :charity_homepage
     else
       flash[:notice] = 'Your email or password is incorrect'
       redirect('/charity/signin')

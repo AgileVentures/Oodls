@@ -1,6 +1,5 @@
 feature 'User signing in' do
 
-
   before(:each) do
     User.create(:organisation => 'test charity',
                 :contact_name => 'test name',

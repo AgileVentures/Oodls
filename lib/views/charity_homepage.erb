@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= current_user.organisation %>'s homepage    
+  <a href="/listing/new">Create listing</a>
+<% else %>
+  Please <a href="/charity/signin">sign in</a> to see your stuff
+<% end %>
