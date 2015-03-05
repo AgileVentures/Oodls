@@ -3,6 +3,9 @@
   <head>
   </head>
   <body>
+  <header>
+    <a href="/">Oodls</a>    
+  </header>
     <% if current_user %>
       Welcome <%= current_user.organisation %>
 	    <form id='log-out' method='get' action='/charity/signout'>
