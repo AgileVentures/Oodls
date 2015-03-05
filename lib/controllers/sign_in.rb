@@ -4,7 +4,7 @@ class Oodls < Sinatra::Base
     erb :signin
   end
   
-  post '/charity/signin'do
+  post '/charity/signin' do
     email, password = params[:email], params[:password]
     user = User.authenticate(email, password)
     if user
@@ -13,5 +13,12 @@ class Oodls < Sinatra::Base
       redirect('/')
     end
   end
+
+  get '/charity/signout' do
+  	flash[:notice] = 'goodbye!'
+  	session[:user_id] = nil
+    redirect('/')
+  end
+
 end
 
