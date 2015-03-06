@@ -1,7 +1,4 @@
-<% if current_user %>
-  Welcome <%= current_user.organisation %>
+<% if !current_user %>
+  <a href="/charity/signup">Sign up</a>
+  <a href="/charity/signin">Sign in</a>
 <% end %>
-
-<a href="/charity/signup">Sign up</a>
-
-<a href="#">Sign in</a>

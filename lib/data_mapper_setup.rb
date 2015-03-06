@@ -1,6 +1,9 @@
-env = ENV['RACK_FLASH'] || 'development'
+require 'data_mapper'
+require_relative './models/user.rb'
 
-DataMapper.setup(:default, "postgres://localhost/oodls_#{env}")
+env = ENV['RACK_ENV'] || 'development'
+
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/oodls_#{env}")
 
 DataMapper.auto_upgrade!
 

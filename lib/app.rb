@@ -3,26 +3,26 @@ require 'sinatra/base'
 require 'sinatra/partial'
 require 'data_mapper'
 require 'sinatra/flash'
-require_relative 'model/user'
-require_relative 'data_mapper_setup'
+require_relative 'models/user'
+require_relative 'controllers/application.rb'
+require_relative 'controllers/about_oodls.rb'
+require_relative 'controllers/user_sign_up.rb'
+require_relative 'controllers/user_sign_in.rb'
+require_relative 'controllers/map.rb'
+require_relative './data_mapper_setup.rb'
+require_relative 'helpers/helper.rb'
 
 class Oodls < Sinatra::Base
 
 	enable :sessions
-	register Sinatra::Flash
 	set :session_secret, 'super secret'
-  require_relative 'helpers/helper.rb'
+  
+	register Sinatra::Flash
+  use Rack::MethodOverride
 
   set :root, File.dirname(__FILE__)
   set :views, Proc.new { File.join(root, "/views") }
   set :public_folder, 'public'
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
-
-require_relative 'controllers/application.rb'
-require_relative 'controllers/about_oodls.rb'
-require_relative 'controllers/user.rb'
-require_relative 'controllers/map.rb'
-
