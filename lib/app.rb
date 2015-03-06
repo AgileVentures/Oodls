@@ -10,6 +10,7 @@ require_relative 'controllers/about_oodls_controller.rb'
 require_relative 'controllers/user_sign_up_controller.rb'
 require_relative 'controllers/user_sign_in_controller.rb'
 require_relative 'controllers/listings_controller.rb'
+require_relative 'controllers/map.rb'
 require_relative './data_mapper_setup.rb'
 require_relative 'helpers/helper.rb'
 
@@ -23,6 +24,7 @@ class Oodls < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
   set :views, Proc.new { File.join(root, "/views") }
+  set :public_folder, 'public'
 
   run! if app_file == $0
 end
