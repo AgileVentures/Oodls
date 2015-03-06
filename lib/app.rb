@@ -15,6 +15,7 @@ class Oodls < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
   set :views, Proc.new { File.join(root, "/views") }
+  set :public_folder, 'public'
 
   # start the server if ruby file executed directly
   run! if app_file == $0
@@ -23,3 +24,5 @@ end
 require_relative 'controllers/application.rb'
 require_relative 'controllers/about_oodls.rb'
 require_relative 'controllers/user.rb'
+require_relative 'controllers/map.rb'
+
