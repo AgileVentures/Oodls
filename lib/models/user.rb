@@ -10,6 +10,8 @@ class User
 	property :email, 						String
 	property :password_digest,	Text
 
+  has n, :listings
+
 	attr_reader 	:password
 	attr_accessor :password_confirmation
 	validates_confirmation_of :password

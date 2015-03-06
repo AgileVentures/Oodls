@@ -1,6 +1,14 @@
 <% if current_user %>
-  <%= current_user.organisation %>'s homepage    
+  <%= current_user.organisation %>    
   <a href="/listing/new">Create listing</a>
+  Your current listings:
+    <% if @listings %>
+      <% @listings.each do |listing| %>
+        <%= listing.donation_centre_address %>
+      <% end %>
+    <% else %>
+      You do not have any listings
+    <% end %>
 <% else %>
   Please <a href="/charity/signin">sign in</a> to see your stuff
 <% end %>
