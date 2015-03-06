@@ -11,7 +11,7 @@ describe Listing do
     						  user_id: 2
     						)
     expect(Listing.count).to eq 1
-    Listing = Listing.first
+    listing = Listing.first
     expect(listing.donation_centre_address).to eq 'address'
     expect(listing.donation_centre_postcode).to eq 'postcode'
     listing.destroy
@@ -24,7 +24,7 @@ end
 feature 'Creating listings' do
   
   before(:each) do
-    User.create(:id => '1',
+    User.create(
                 :organisation => 'test charity',
                 :contact_name => 'test name',
                 :email => 'test@test.com',
@@ -34,7 +34,7 @@ feature 'Creating listings' do
 
   scenario 'A signed in user has a homepage' do
     sign_in
-    expect(page).to have_content 'Your current listings:'
+    expect(page).to have_content 'You do not have any listings'
   end
 
   scenario 'A not signed in user cannot see homepage' do
@@ -51,7 +51,7 @@ feature 'Creating listings' do
     sign_in
     fill_in_listing_form
     expect(current_path).to eq '/charity/home'
-    expect(page).to have_content 'test charity 50 Commercial Street'
+    expect(page).to have_content '50 Commercial Street'
   end
 
 end

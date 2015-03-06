@@ -5,8 +5,10 @@ class Oodls < Sinatra::Base
   end
 
   get '/charity/home' do
-    @user = current_user.id
-    @listings = Listing.all(:charity_id => @user)
+    if current_user
+      @user = current_user.id
+      @listings = Listing.all(:user_id => @user)
+    end
     erb :charity_homepage
   end
 

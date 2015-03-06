@@ -9,7 +9,6 @@ class Listing
   property :donation_centre_postcode, Text
   property :weekday_opening_hours, String
   property :weekend_opening_hours, String
-  property :charity_id, Serial
 
 	belongs_to :user
 

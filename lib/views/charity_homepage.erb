@@ -1,10 +1,14 @@
 <% if current_user %>
   <%= current_user.organisation %>    
   <a href="/listing/new">Create listing</a>
-  Your current listings:
-    <% if @listings %>
+    <% if @listings.length > 0 %>
+      Your current listings:
       <% @listings.each do |listing| %>
         <%= listing.donation_centre_address %>
+        <%= listing.donation_centre_postcode %>
+        Opening hours:
+        Weekday: <%= listing.weekday_opening_hours %>
+        Weekend: <%= listing.weekend_opening_hours %>
       <% end %>
     <% else %>
       You do not have any listings

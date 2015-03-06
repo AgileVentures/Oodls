@@ -10,7 +10,7 @@ class Oodls < Sinatra::Base
   						         :donation_centre_postcode => params[:postcode],
   							       :weekday_opening_hours => params[:weekday_hours],
   							       :weekend_opening_hours => params[:weekend_hours],
-                       :charity_id => @user.id)
+                       :user_id => @user.id)
     redirect '/charity/home'
   end
 

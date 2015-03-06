@@ -20,7 +20,7 @@ feature 'User signing up' do
 	scenario 'should be able to sign up' do
 		sign_up
 		expect(User.first.organisation).to eq 'test charity'
-		expect(current_path).to eq '/charity'
+		expect(current_path).to eq '/charity/home'
 		expect(page).to have_content 'Welcome test charity'
 	end
 

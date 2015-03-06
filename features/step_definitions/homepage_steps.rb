@@ -3,11 +3,11 @@ Given(/^I am on the homepage$/) do
 end
 
 Given(/^I want to find out more about Oodls$/) do
-  expect(page).to have_content('About Oodls')
+  expect(page).to have_content('About')
 end
 
 When(/^I click on About Oodls$/) do
-  click_link('About Oodls')
+  click_link('About')
 end
 
 Then(/^I should be able to learn about Oodls$/) do
