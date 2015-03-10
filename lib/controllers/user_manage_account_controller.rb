@@ -12,6 +12,13 @@ class Oodls < Sinatra::Base
 	  flash[:notice] = 'Your account has been updated'
     redirect '/charity/home'
   end
+
+  get '/charity/delete' do
+    user = current_user
+    user.destroy!
+    flash[:notice] = 'Your account has been deleted'
+    redirect '/'
+  end
   
   def new_organisation
     params[:organisation].empty? ? current_user.organisation : params[:organisation]
