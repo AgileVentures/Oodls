@@ -1,4 +1,4 @@
-<% if @listings %>
+<% if @listings.length > 0 %>
   <% @listings.each do |listing| %>
     <%= listing.donation_centre_address %>
     <%= listing.donation_centre_postcode %>
