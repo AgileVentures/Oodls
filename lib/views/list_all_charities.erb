@@ -1,7 +1,11 @@
 <% if @listings.length > 0 %>
   <% @listings.each do |listing| %>
-    <%= listing.donation_centre_address %>
-    <%= listing.donation_centre_postcode %>
+    <%= listing.user.organisation %>,
+    <%= listing.donation_centre_address %>,
+    <%= listing.donation_centre_postcode %>.
+    Opening hours:
+    Weekday: <%= listing.weekday_opening_hours %>
+    Weekend: <%= listing.weekend_opening_hours %>
   <% end %>
 <% else %>
   No active listings

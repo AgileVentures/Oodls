@@ -13,7 +13,7 @@ feature 'Show all listings' do
 
   before(:each) do
     Listing.create(:user_id => 1,
-                   :donation_centre_address => '50 Commerical Street',
+                   :donation_centre_address => '50 Commercial Street',
                    :donation_centre_postcode => 'E1 6LT',
                    :weekday_opening_hours => '9-6',
                    :weekend_opening_hours => '10-5')
