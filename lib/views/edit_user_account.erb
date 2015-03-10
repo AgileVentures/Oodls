@@ -1,1 +1,11 @@
 <h2>Edit your account</h2>
+
+<div id='charity-edit'>
+	<form action='/charity/edit' method='post'>
+		Organisation: <input type='text' name='organisation' placeholder='<%= current_user.organisation %>'>
+		Contact Name: <input type='text' name='contact_name' placeholder='<%= current_user.contact_name %>'>
+		Email: <input type='text' name='email' placeholder='<%= current_user.email %>'>
+		<input type='submit' value='Save changes'>
+	</form>
+</div>
+

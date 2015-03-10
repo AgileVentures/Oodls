@@ -15,6 +15,9 @@ feature 'User edits account' do
   end
 
   scenario 'should be able to change their details or add more' do
+    expect(page).to have_content 'test charity'
+    edit_account_details
+    expect(page).to have_content 'edited test charity'
   end 
 
 end

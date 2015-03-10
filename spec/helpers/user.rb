@@ -34,3 +34,11 @@ def sign_in_wrong_details
   fill_in :password, :with => 'wrong'
   click_button 'Sign in'
 end
+
+def edit_account_details
+	visit '/charity/edit'
+	fill_in :organisation, :with => 'edited test charity'
+	fill_in :contact_name, :with => 'edited test name'
+	fill_in :email, :with => 'edited_test@test.com'
+	click_button 'Save changes'
+end
