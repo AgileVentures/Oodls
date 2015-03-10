@@ -1,6 +1,6 @@
 class Oodls < Sinatra::Base
 
-	  get '/map' do
+	get '/map' do
     erb :map
   end
 

@@ -1,6 +1,6 @@
 <% if current_user %>
   <%= current_user.organisation %>    
-  <a href="/listing/new">Create listing</a>
+  <a href="/listings/new">Create listing</a>
     <% if @listings.length > 0 %>
       Your current listings:
       <% @listings.each do |listing| %>

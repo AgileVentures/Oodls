@@ -1,6 +1,6 @@
 class Oodls < Sinatra::Base
 
-  get '/listing/new' do
+  get '/listings/new' do
     erb :new_listing_form
   end
 
@@ -12,6 +12,11 @@ class Oodls < Sinatra::Base
   							       :weekend_opening_hours => params[:weekend_hours],
                        :user_id => @user.id)
     redirect '/charity/home'
+  end
+
+  get '/listings/all' do
+    @listings = Listing.all
+    erb :list_all_charities
   end
 
 end
