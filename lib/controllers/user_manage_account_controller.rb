@@ -15,7 +15,7 @@ class Oodls < Sinatra::Base
 
   get '/charity/delete' do
     user = current_user
-    user.destroy!
+    user.destroy
     flash[:notice] = 'Your account has been deleted'
     redirect '/'
   end
