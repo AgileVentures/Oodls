@@ -7,9 +7,9 @@ class Oodls < Sinatra::Base
 
   post '/charity/edit' do
     user = current_user
-    user.update(:organisation => new_organisation,
-                :contact_name => new_contact_name,
-                :email => new_email)
+    user.update(:organisation => check_empty(:organisation),
+                :contact_name => check_empty(:contact_name),
+                :email => check_empty(:email))
 	  flash[:notice] = 'Your account has been updated'
     redirect '/charity/home'
   end
@@ -21,20 +21,4 @@ class Oodls < Sinatra::Base
     redirect '/'
   end
   
-  def check_empty(parameter)
-    params[:parameter].empty? ? current_user.parameter : params[:parameter]
-  end
-
-  def new_organisation
-    params[:organisation].empty? ? current_user.organisation : params[:organisation]
-  end
-
-  def new_contact_name
-    params[:contact_name].empty? ? current_user.contact_name : params[:contact_name]
-  end
-
-  def new_email
-    params[:email].empty? ? current_user.email : params[:email]
-  end
-
 end 

@@ -14,11 +14,15 @@ feature 'User edits account' do
     expect(page).to have_content 'Edit your account'
   end
 
-  scenario 'should be able to change their details or add more' do
+  scenario 'should be able to change their details' do
     expect(page).to have_content 'test charity'
     edit_account_details
     expect(page).to have_content 'edited test charity'
   end 
+
+  scenario 'should be able to add more details' do
+    # tbc
+  end
 
 end
 
