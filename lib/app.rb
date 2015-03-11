@@ -6,14 +6,13 @@ require 'sinatra/flash'
 require_relative 'models/user'
 require_relative 'models/listing'
 require_relative 'controllers/application_controller.rb'
-require_relative 'controllers/info_pages_controller.rb'
 require_relative 'controllers/user_sign_up_controller.rb'
 require_relative 'controllers/user_sign_in_controller.rb'
 require_relative 'controllers/user_manage_account_controller.rb'
 require_relative 'controllers/listings_controller.rb'
 require_relative 'controllers/donation_controller.rb'
 require_relative './data_mapper_setup.rb'
-require_relative 'helpers/helper.rb'
+require_relative 'helper_methods/helper.rb'
 
 class Oodls < Sinatra::Base
 

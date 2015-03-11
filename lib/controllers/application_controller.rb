@@ -4,12 +4,16 @@ class Oodls < Sinatra::Base
     erb :index
   end
 
-  get '/charity/home' do
-    if current_user
-      @user = current_user.id
-      @listings = Listing.all(:user_id => @user)
-    end
-    erb :'users/charity_homepage'
+  get '/about' do
+    erb :'general/about'
+  end
+
+  get '/contact' do
+    erb :'general/contact'
+  end
+
+  get '/info_faq' do
+    erb :'general/information_and_faq'
   end
 
 end

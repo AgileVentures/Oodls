@@ -10,7 +10,7 @@ class User
 	property :email, 						String
 	property :password_digest,	Text
 
-  has n, :listings, :constraint => :destroy# (or :destroy!)
+  has n, :listings, :constraint => :destroy
 
 	attr_reader 	:password
 	attr_accessor :password_confirmation
