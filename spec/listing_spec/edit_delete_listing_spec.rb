@@ -30,7 +30,7 @@ feature 'Delete/Edit listings' do
     sign_in
     click_link 'Edit this listing'
     edit_listing_form
-    expect(page).to have content 'Another address'
+    expect(page).to have_content 'Another street'
   end
 
   #scenario 'A signed in user can delete specific listings' do
