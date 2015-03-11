@@ -13,8 +13,4 @@
 	</form>
 </div>
 
-
-<form id='delete-listing' method='get' action='/listings/delete'>
-	<input type='hidden' name='_method' value='delete'>
-	<input type='submit' value='Delete listing' class='button'>
-</form>
+<a href='/listings/delete/<%= @listing.id %>'>Delete listing<a>

@@ -33,12 +33,12 @@ feature 'Delete/Edit listings' do
     expect(page).to have_content 'Another street'
   end
 
-  #scenario 'A signed in user can delete specific listings' do
-    #sign_in
-    #click_link 'Edit this listing'
-    #click_button 'Delete listing'
-    #expect(Listing.count).to eq 0
-  #end
+  scenario 'A signed in user can delete specific listings' do
+    sign_in
+    click_link 'Edit this listing'
+    click_link 'Delete listing'
+    expect(Listing.count).to eq 0
+  end
 
 end
 
