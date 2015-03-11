@@ -1,6 +1,9 @@
 class Oodls < Sinatra::Base
 
   get '/charity' do
+    if current_user
+      redirect 'charity/home'
+    end
   	erb :'users/charity'
   end
 
