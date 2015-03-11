@@ -9,7 +9,7 @@ class Oodls < Sinatra::Base
       @user = current_user.id
       @listings = Listing.all(:user_id => @user)
     end
-    erb :charity_homepage
+    erb :'users/charity_homepage'
   end
 
 end

@@ -1,12 +1,12 @@
 class Oodls < Sinatra::Base
 
   get '/charity' do
-  	erb :charity
+  	erb :'users/charity'
   end
 
   get '/charity/signup' do
   	@user = User.new
-  	erb :signup
+  	erb :'users/signup'
   end
 
   post '/charity' do

@@ -1,7 +1,7 @@
 class Oodls < Sinatra::Base
 
   get '/listings/new' do
-    erb :new_listing_form
+    erb :'listings/new_listing_form'
   end
 
   post '/listings' do
@@ -16,12 +16,12 @@ class Oodls < Sinatra::Base
 
   get '/listings/all' do
     @listings = Listing.all
-    erb :list_all_charities
+    erb :'listings/list_all_charities'
   end
 
   get '/listings/edit/:id' do
     @listing = Listing.get(params[:id])
-    erb :listing_edit
+    erb :'listings/listing_edit'
   end
 
   post '/listings/edit/:id' do

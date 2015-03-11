@@ -1,7 +1,7 @@
 class Oodls < Sinatra::Base
 
   get '/charity/signin' do
-    erb :signin
+    erb :'users/signin'
   end
   
   post '/charity/signin' do
@@ -9,18 +9,17 @@ class Oodls < Sinatra::Base
     user = User.authenticate(email, password)
     if user
       session[:user_id] = user.id
-      redirect('/charity/home')
-      #erb :charity_homepage
+      redirect '/charity/home'
     else
       flash[:notice] = 'Your email or password is incorrect'
-      redirect('/charity/signin')
+      redirect '/charity/signin'
     end
   end
 
   get '/charity/signout' do
   	flash[:notice] = 'Goodbye!'
   	session[:user_id] = nil
-    redirect('/')
+    redirect '/'
   end
 
 end

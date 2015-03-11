@@ -2,7 +2,7 @@ class Oodls < Sinatra::Base
 
   get '/charity/edit' do
     @user = current_user
-    erb :edit_user_account
+    erb :'users/edit_user_account'
   end
 
   post '/charity/edit' do
