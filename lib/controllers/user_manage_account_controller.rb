@@ -21,6 +21,10 @@ class Oodls < Sinatra::Base
     redirect '/'
   end
   
+  def check_empty(parameter)
+    params[:parameter].empty? ? current_user.parameter : params[:parameter]
+  end
+
   def new_organisation
     params[:organisation].empty? ? current_user.organisation : params[:organisation]
   end
