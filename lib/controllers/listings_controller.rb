@@ -19,4 +19,8 @@ class Oodls < Sinatra::Base
     erb :list_all_charities
   end
 
+  get '/listings/edit/:id' do
+    erb :listing_edit
+  end
+
 end

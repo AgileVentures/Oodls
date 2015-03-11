@@ -9,6 +9,7 @@
         Opening hours:
         Weekday: <%= listing.weekday_opening_hours %>
         Weekend: <%= listing.weekend_opening_hours %>
+        <a href='/listings/edit/<%= listing.id %>'>Edit this listing</a>
       <% end %>
     <% else %>
       You do not have any listings
