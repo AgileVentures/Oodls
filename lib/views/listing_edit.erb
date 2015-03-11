@@ -1,0 +1,20 @@
+<%= @listing.donation_centre_address %>
+<%= @listing.donation_centre_postcode %>
+<%= @listing.weekday_opening_hours %>
+<%= @listing.weekend_opening_hours %>
+
+<div id='listing-edit'>
+	<form action='/listings/edit/<%= @listing.id %>' method='post'>
+		Donation Centre Address: <input type='text' name='donation_centre_address'>
+		Donation Centre Postcode: <input type='text' name='donation_centre_postcode'>
+		Weekday Opening Hours: <input type='text' name='weekday_opening_hours'>
+    Weekend Opening Hours: <input type='text' name='weekend_opening_hours'>
+		<input type='submit' value='Save changes'>
+	</form>
+</div>
+
+
+<form id='delete-listing' method='get' action='/listings/delete'>
+	<input type='hidden' name='_method' value='delete'>
+	<input type='submit' value='Delete listing' class='button'>
+</form>

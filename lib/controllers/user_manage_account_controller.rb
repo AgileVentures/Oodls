@@ -7,9 +7,9 @@ class Oodls < Sinatra::Base
 
   post '/charity/edit' do
     user = current_user
-    user.update(:organisation => check_empty(:organisation),
-                :contact_name => check_empty(:contact_name),
-                :email => check_empty(:email))
+    user.update(:organisation => update_user(:organisation),
+                :contact_name => update_user(:contact_name),
+                :email => update_user(:email))
 	  flash[:notice] = 'Your account has been updated'
     redirect '/charity/home'
   end

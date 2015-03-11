@@ -19,12 +19,26 @@ feature 'Delete/Edit listings' do
                    :weekend_opening_hours => '10-5')
   end
 
-  scenario 'A signed in user can go to their homepage and edit their listings' do
+  scenario 'A signed in user can go from their homepage to a page to edit their listings' do
     sign_in
     visit '/charity/home'
     expect(page).to have_content 'Your current listings: 50 Commercial Street E1 6LT Opening hours: Weekday: 9-6 Weekend: 10-5'
     click_link 'Edit this listing'
   end
+
+  scenario 'A signed in user can edit specific listings' do
+    sign_in
+    click_link 'Edit this listing'
+    edit_listing_form
+    expect(page).to have content 'Another address'
+  end
+
+  #scenario 'A signed in user can delete specific listings' do
+    #sign_in
+    #click_link 'Edit this listing'
+    #click_button 'Delete listing'
+    #expect(Listing.count).to eq 0
+  #end
 
 end
 
