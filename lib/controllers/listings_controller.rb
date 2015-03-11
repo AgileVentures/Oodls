@@ -37,7 +37,7 @@ class Oodls < Sinatra::Base
   get '/listings/delete/:id' do
     unwanted_listing = Listing.get(params[:id])
     unwanted_listing.destroy
-    flash[:notice] = 'You listing has been deleted'
+    flash[:notice] = 'Your listing has been deleted'
     redirect '/charity/home'
   end
 
