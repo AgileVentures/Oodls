@@ -5,9 +5,9 @@ class User
 	include DataMapper::Resource
 
 	property :id, 							Serial 
-	property :organisation, 		String
+	property :organisation, 		String, :required => true, :unique => true
 	property :contact_name,			String
-	property :email, 						String
+	property :email, 						String, :required => true, :unique => true
 	property :password_digest,	Text
   property :description,      String
   property :website,          String
@@ -16,7 +16,9 @@ class User
 
 	attr_reader 	:password
 	attr_accessor :password_confirmation
+
 	validates_confirmation_of :password
+  validates_presence_of :password
 
 	def password=(password)
 		@password = password
