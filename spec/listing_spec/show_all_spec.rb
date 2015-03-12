@@ -21,7 +21,7 @@ feature 'Show all listings' do
 
   scenario 'Any user can navigate to a page and see a list of all charities currently accepting donations' do
     visit '/listings/all'
-    expect(page).to have_content 'test charity, 50 Commercial Street, E1 6LT'
+    expect(page).to have_content 'Charities & Organisations currently accepting donations:'
   end
 
 end

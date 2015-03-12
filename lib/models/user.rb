@@ -18,7 +18,7 @@ class User
 	attr_accessor :password_confirmation
 
 	validates_confirmation_of :password
-  validates_presence_of :password
+  # will soon have val_pres_of pass but not yet as it will break stuff until i have a method
 
 	def password=(password)
 		@password = password

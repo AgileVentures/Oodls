@@ -27,7 +27,7 @@ feature 'User signing up' do
 	scenario 'should be notified if passwords don\'t match' do
 		expect{ sign_up_mismatch_password }.to change(User, :count).by(0)
 		expect(current_path).to eq '/charity/signup'	
-		expect(page).to have_content 'Your passwords do not match'
+		expect(page).to have_content 'Password does not match the confirmation'
 	end
 
 end

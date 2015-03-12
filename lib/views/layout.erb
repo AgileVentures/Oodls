@@ -18,11 +18,18 @@
       <a href='/contact'>Contact</a>
     </header>
 
-  	<% if flash[:notice] %>
-  		<div id='flash' class='notice'>
-  			<%= flash[:notice] %>
-  		</div>
-  	<% end %>
+    <% if flash[:errors] && !flash[:errors].empty? %>  
+      <ul>
+   	    <% flash[:errors].each do |error| %>
+   		    <li class='flash error'><%= error %></li>
+  	    <% end %>
+ 	    </ul>
+    <% end %>
+    <% if flash[:notice] %>
+	    <div id='flash' class='notice'>
+		    <%= flash[:notice] %>
+	    </div>
+    <% end %>
     
     <%= yield %>
 

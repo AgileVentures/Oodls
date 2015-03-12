@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/partial'
 require 'data_mapper'
-require 'sinatra/flash'
+require 'rack-flash'
 require_relative 'models/user'
 require_relative 'models/listing'
 require_relative 'controllers/application_controller.rb'
@@ -19,7 +19,7 @@ class Oodls < Sinatra::Base
 	enable :sessions
 	set :session_secret, 'super secret'
   
-	register Sinatra::Flash
+  use Rack::Flash
   use Rack::MethodOverride
 
   set :root, File.dirname(__FILE__)

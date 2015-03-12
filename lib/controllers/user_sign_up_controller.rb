@@ -22,7 +22,7 @@ class Oodls < Sinatra::Base
 	    session[:user_id] = user.id
       redirect '/charity/home'
 	  else
-	  	flash[:notice] = "Your passwords do not match"
+      flash[:errors] = user.errors.full_messages
 	  	redirect '/charity/signup'
 	  end
   end
