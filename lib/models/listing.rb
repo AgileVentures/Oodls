@@ -5,10 +5,10 @@ class Listing
 	include DataMapper::Resource
 
 	property :id, Serial
-	property :donation_centre_address, Text
-  property :donation_centre_postcode, Text
-  property :weekday_opening_hours, String
-  property :weekend_opening_hours, String
+	property :donation_centre_address,  Text, :required => true
+  property :donation_centre_postcode, Text, :required => true
+  property :weekday_opening_hours,    String, :required => true
+  property :weekend_opening_hours,    String, :required => true
 
 	belongs_to :user
 
