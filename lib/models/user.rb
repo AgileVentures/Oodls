@@ -8,7 +8,7 @@ class User
 	property :organisation, 		String, :required => true, :unique => true
 	property :contact_name,			String
 	property :email, 						String, :required => true, :unique => true
-	property :password_digest,	Text
+	property :password_digest,	Text#, :length => 8..20
   property :description,      String
   property :website,          String
 
