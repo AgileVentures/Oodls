@@ -27,7 +27,7 @@ feature 'User signing in' do
 
   scenario 'should be able to sign out' do
     sign_in
-    click_button 'Sign out'
+    click_link 'Sign out'
     expect(page).not_to have_content 'Welcome test charity'
     expect(page).to have_content 'Goodbye!'
   end

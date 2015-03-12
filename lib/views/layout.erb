@@ -6,26 +6,25 @@
   <script type="text/javascript" src="javascripts/gmaps.js"></script>
   </head>
   <body>
-  <header>
-    <a href='/'>Oodls</a>
-    <a href='/listings/all'>Active Donation Centres</a>
-    <a href="/about">About</a>
-    <a href='/info_faq'>Info/FAQ</a>
-    <a href='/contact'>Contact</a>
-  </header>
-    <% if current_user %>
-      Welcome <a href='/charity/home'><%=current_user.organisation %></a>
-	    <form id='log-out' method='get' action='/charity/signout'>
-		    <input type='hidden' name='_method' value='delete'>
-		    <input type='submit' value='Sign out' class='button'>
-	    </form>
-    <% end %>
+    <header>
+      <a href='/'>Oodls</a>
+        <% if current_user %>
+          Welcome <a href='/charity/home'><%= current_user.organisation %></a>
+          <a href='/charity/signout'>Sign out</a>
+        <% end %>
+      <a href='/listings/all'>Active Donation Centres</a>
+      <a href="/about">About</a>
+      <a href='/info_faq'>Info/FAQ</a>
+      <a href='/contact'>Contact</a>
+    </header>
 
   	<% if flash[:notice] %>
   		<div id='flash' class='notice'>
   			<%= flash[:notice] %>
   		</div>
   	<% end %>
+    
     <%= yield %>
+
   </body>
 </html>
