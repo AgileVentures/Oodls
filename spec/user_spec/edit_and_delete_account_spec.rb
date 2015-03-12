@@ -21,7 +21,11 @@ feature 'User edits account' do
   end 
 
   scenario 'should be able to add more details' do
-    # tbc
+    click_link 'Edit account'
+    fill_in :description, :with => 'we do good things'
+    fill_in :website, :with => 'www.good.com'
+    click_button 'Save changes'
+    expect(User.first.description).to eq 'we do good things'
   end
 
 end

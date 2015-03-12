@@ -3,6 +3,8 @@
 <div id='charity-edit'>
 	<form action='/charity/edit' method='post'>
 		Organisation: <input type='text' name='organisation' placeholder='<%= current_user.organisation %>'>
+    Organisation Description: <input type='text', name='description' placeholder='<%= current_user.description %>'>
+    Website: <input type='text', name='website' placeholder='<%= current_user.website %>'>
 		Contact Name: <input type='text' name='contact_name' placeholder='<%= current_user.contact_name %>'>
 		Email: <input type='text' name='email' placeholder='<%= current_user.email %>'>
 		<input type='submit' value='Save changes'>

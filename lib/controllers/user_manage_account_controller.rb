@@ -16,6 +16,8 @@ class Oodls < Sinatra::Base
   post '/charity/edit' do
     user = current_user
     user.update(:organisation => update_model(:organisation, user),
+                :description => update_model(:description, user),
+                :website => update_model(:website, user),
                 :contact_name => update_model(:contact_name, user),
                 :email => update_model(:email, user))
 	  flash[:notice] = 'Your account has been updated'

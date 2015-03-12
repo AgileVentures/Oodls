@@ -9,6 +9,8 @@ class User
 	property :contact_name,			String
 	property :email, 						String
 	property :password_digest,	Text
+  property :description,      String
+  property :website,          String
 
   has n, :listings, :constraint => :destroy
 
