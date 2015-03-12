@@ -1,4 +1,9 @@
 <% if current_user %>
+  <%= current_user.organisation %>
+  <%= current_user.description %>
+  <%= current_user.website %>
+  <%= current_user.contact_name %>
+  <%= current_user.email %>
   <a href='/charity/edit'>Edit account</a>
   <a href="/listings/new">Create listing</a>
     <% if @listings.length > 0 %>

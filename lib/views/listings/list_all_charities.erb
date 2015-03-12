@@ -3,6 +3,9 @@
 <% if @listings.length > 0 %>
   <% @listings.each do |listing| %>
     <%= listing.user.organisation %>,
+    <%= listing.user.description %>,
+    <%= listing.user.website %>,
+    <%= listing.user.email %>,
     <%= listing.donation_centre_address %>,
     <%= listing.donation_centre_postcode %>.
     Opening hours:
