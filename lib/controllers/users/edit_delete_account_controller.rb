@@ -1,13 +1,5 @@
 class Oodls < Sinatra::Base
 
-  get '/charity/home' do
-    if current_user
-      @user = current_user.id
-      @listings = Listing.all(:user_id => @user)
-    end
-    erb :'users/charity_homepage'
-  end
-
   get '/charity/edit' do
     @user = current_user
     erb :'users/edit_user_account'
