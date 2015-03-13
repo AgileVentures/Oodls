@@ -13,7 +13,7 @@ class Oodls < Sinatra::Base
     erb :'users/edit_user_account'
   end
 
-  post '/charity/edit' do
+  post '/charity/edit' do #i would like this method to require password confirmation at some point
     user = current_user
     user.update(:organisation => update_model(:organisation, user),
                 :description => update_model(:description, user),
