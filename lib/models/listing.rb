@@ -9,6 +9,8 @@ class Listing
   property :donation_centre_postcode, Text, :required => true
   property :weekday_opening_hours,    String, :required => true
   property :weekend_opening_hours,    String, :required => true
+  property :latitude,                 Float
+  property :longitude,                Float
 
 	belongs_to :user
 
