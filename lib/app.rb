@@ -3,14 +3,10 @@ require 'sinatra/base'
 require 'sinatra/partial'
 require 'data_mapper'
 require 'rack-flash'
-require_relative 'models/user'
-require_relative 'models/listing'
-require_relative 'controllers/application_controller.rb'
-require_relative 'controllers/users/user_sign_up_controller.rb'
-require_relative 'controllers/users/user_sign_in_controller.rb'
-require_relative 'controllers/users/user_manage_account_controller.rb'
-require_relative 'controllers/listings/listings_controller.rb'
-require_relative 'controllers/donation_controller.rb'
+
+Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/controllers/**/*.rb'].each {|file| require file }
+
 require_relative './data_mapper_setup.rb'
 require_relative 'helper_methods/helper.rb'
 
