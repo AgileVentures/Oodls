@@ -1,9 +1,10 @@
+#
 class Oodls < Sinatra::Base
 
   get '/charity/signin' do
     erb :'users/signin'
   end
-  
+
   post '/charity/signin' do
     email, password = params[:email], params[:password]
     user = User.authenticate(email, password)
@@ -17,10 +18,9 @@ class Oodls < Sinatra::Base
   end
 
   get '/charity/signout' do
-  	flash[:notice] = 'Goodbye!'
-  	session[:user_id] = nil
+    flash[:notice] = 'Goodbye!'
+    session[:user_id] = nil
     redirect '/'
   end
 
 end
-
