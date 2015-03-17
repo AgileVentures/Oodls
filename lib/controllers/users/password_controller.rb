@@ -6,15 +6,19 @@ class Oodls < Sinatra::Base
 
   post '/charity/request_token' do
     user = User.first(:email => params[:email])
-    token = user.generate_token
-    timestamp = Time.now 
-    user.update(token: token, timestamp: timestamp)
+    user.update(token: user.generate_token, timestamp: Time.now)
     erb :'users/token_request_message'
   end
 
   get '/charity/reset_password/:token' do
-    @token = params[:token]
-    erb :'users/reset_password'
+    user = User.first(token: params[:token])
+    if user.token_valid?
+      @token = params[:token]
+      erb :'users/reset_password'
+    else
+      flash[:notice] = 'That token has expired, please request another'
+      redirect '/charity/request_token'
+    end
   end
 
   post '/charity/reset_password' do

@@ -42,5 +42,16 @@ feature 'User forgets password' do
     expect(page).to have_content 'Welcome test charity'
   end
 
+  scenario 'should be asked to reapply for token if timed out' do
+    visit '/charity'
+    click_link 'Forgot password'
+    fill_in :email, :with => 'test@test.com'
+    click_button 'Send request'
+    User.first.update(timestamp: User.first.timestamp - 3600)
+    visit '/charity/reset_password/' + User.first.token
+    expect(page).to have_content 'That token has expired, please request another'
+    expect(current_path).to eq '/charity/request_token'
+  end
+
 end
 

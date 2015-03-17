@@ -9,11 +9,11 @@ class User
   property :organisation, 		String, required: true, unique: true
   property :contact_name,			String
   property :email, 						String, required: true, unique: true
-  property :password_digest,	Text#, length: 8..20
+  property :password_digest,	Text#, length: 8..15
   property :description,      String
   property :website,          String
   property :token,            Text
-  property :timestamp,        DateTime
+  property :timestamp,        Time
 
   has n, :listings, constraint: :destroy
 
@@ -37,6 +37,10 @@ class User
 
   def generate_token
     SecureRandom.hex(32)
+  end
+
+  def token_valid?
+    Time.now < (timestamp + 3600)
   end
 
 end
