@@ -1,4 +1,3 @@
-#
 class Oodls < Sinatra::Base
 
   post '/charity/signin' do

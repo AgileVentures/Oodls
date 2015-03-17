@@ -1,4 +1,3 @@
-#
 require 'bcrypt'
 
 class User
@@ -12,6 +11,8 @@ class User
   property :password_digest,	Text#, length: 8..20
   property :description,      String
   property :website,          String
+  property :token,            Text
+  property :timestamp,        DateTime
 
   has n, :listings, constraint: :destroy
 
@@ -31,6 +32,10 @@ class User
     if user && BCrypt::Password.new(user.password_digest) == password
       user
     end
+  end
+
+  def generate_token
+    (1..64).map{('A'..'Z').to_a.sample}.join
   end
 
 end

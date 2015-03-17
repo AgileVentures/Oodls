@@ -41,3 +41,14 @@ def edit_account_details
 	fill_in :email, :with => 'edited_test@test.com'
 	click_button 'Save changes'
 end
+
+def reset_password
+  visit '/charity'
+  click_link 'Forgot password'
+  fill_in :email, :with => 'test@test.com'
+  click_button 'Send request'
+  visit '/charity/reset_password/' + User.first.token
+  fill_in :password, :with => 'newpassword'
+  fill_in :password_confirmation, :with => 'newpassword'
+  click_button 'Save'
+end
