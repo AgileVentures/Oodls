@@ -8,6 +8,7 @@ gem 'bcrypt-ruby'
 gem 'sinatra-partial'
 gem 'rack-flash3'
 gem 'sinatra-flash'
+gem 'mandrill-api'
 gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
