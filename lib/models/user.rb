@@ -49,13 +49,14 @@ class User
     message = {
       :subject => 'Reset password',
       :from_name => 'Oodls',
-      :text => 'follow this link   ' + '/charity/reset_password/' + token,
+      :text => "copy and paste: localhost:9292/charity/reset_password/#{token}",
       :to => [
         {
           :email => "#{email}",
           :name => "#{organisation}"
         }
       ],
+      #:html => '<html><p><a href=/charity/reset_password/'+ "#{token}" + '>Follow this link</a> to reset your password<p><html>',
       :from_email => 'oodls.team@gmail.com'
       }
     mandrill.messages.send(message)
