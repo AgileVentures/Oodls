@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'securerandom'
 
 class User
   
@@ -35,7 +36,7 @@ class User
   end
 
   def generate_token
-    (1..64).map{('A'..'Z').to_a.sample}.join
+    SecureRandom.hex(32)
   end
 
 end
