@@ -10,7 +10,6 @@ Dir[File.dirname(__FILE__) + '/controllers/**/*.rb'].each { |file| require file 
 require_relative './data_mapper_setup.rb'
 require_relative 'helper_methods/helper.rb'
 
-#
 class Oodls < Sinatra::Base
 
   enable :sessions

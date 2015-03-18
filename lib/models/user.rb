@@ -45,7 +45,7 @@ class User
   end
 
   def send_email(email, token)
-    mandrill = Mandrill::API.new
+    mandrill = Mandrill::API.new ENV['MANDRILL_TEST_APIKEY']
     message = {
       :subject => 'Reset password',
       :from_name => 'Oodls',

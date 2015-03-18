@@ -73,6 +73,7 @@ GEM
     do_postgres (0.10.14)
       data_objects (= 0.10.14)
     docile (1.1.5)
+    dotenv (2.0.0)
     excon (0.44.4)
     extlib (0.9.16)
     fastercsv (1.5.5)
@@ -148,6 +149,8 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  dotenv
+  excon
   launchy
   mandrill-api
   rack-flash3
