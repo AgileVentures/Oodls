@@ -6,7 +6,7 @@ Dotenv.load
 class Mailer
 
   def initialize
-    @mandrill = Mandrill::API.new ENV['MANDRILL_APIKEY']
+    @mandrill = Mandrill::API.new ENV['MANDRILL_TEST_APIKEY']
     @message = {}
   end
 
