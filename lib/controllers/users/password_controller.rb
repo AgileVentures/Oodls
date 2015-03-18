@@ -5,9 +5,10 @@ class Oodls < Sinatra::Base
   end
 
   post '/charity/request_token' do
+    mailer = Mailer.new
     user = User.first(:email => params[:email])
     user.update(token: user.generate_token, timestamp: Time.now)
-    user.send_email(params[:email], user.token)
+    mailer.send_email(params[:email], user.token)
     erb :'users/token_request_message'
   end
 

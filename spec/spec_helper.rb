@@ -8,6 +8,8 @@ require 'helpers/listing'
 require 'sinatra'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'dotenv'
+Dotenv.load
 
 Capybara.app = Oodls
 
@@ -23,7 +25,7 @@ RSpec.configure do |config|
 
   config.before(:all) do 
     Excon.defaults[:mock] = true
-    Excon.stub({}, {body: '{}', status: 200}) # stubs any request to return an empty JSON string
+    Excon.stub({}, {body: '{}', status: 200})
   end
 
   config.before(:suite) do

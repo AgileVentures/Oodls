@@ -1,6 +1,5 @@
 require 'bcrypt'
 require 'securerandom'
-require 'mandrill'
 
 class User
   
@@ -42,24 +41,6 @@ class User
 
   def token_valid?
     Time.now < (timestamp + 3600)
-  end
-
-  def send_email(email, token)
-    mandrill = Mandrill::API.new ENV['MANDRILL_TEST_APIKEY']
-    message = {
-      :subject => 'Reset password',
-      :from_name => 'Oodls',
-      :text => "copy and paste: localhost:9292/charity/reset_password/#{token}",
-      :to => [
-        {
-          :email => "#{email}",
-          :name => "#{organisation}"
-        }
-      ],
-      #:html => '<html><p><a href=/charity/reset_password/'+ "#{token}" + '>Follow this link</a> to reset your password<p><html>',
-      :from_email => 'oodls.team@gmail.com'
-      }
-    mandrill.messages.send(message)
   end
 
 end
