@@ -1,16 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'data_mapper'
-gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'bcrypt-ruby'
-gem 'sinatra-partial'
-gem 'rack-flash3'
-gem 'sinatra-flash'
-gem 'mandrill-api'
-gem 'dotenv'
 gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'data_mapper'
+gem 'dm-paperclip'
+gem 'dm-postgres-adapter'
+gem 'dotenv'
+gem 'mandrill-api'
+gem 'rack-flash3'
+gem 'sinatra'
+gem 'sinatra-flash'
+gem 'sinatra-partial'
 
 group :development, :test do
   gem 'capybara'
