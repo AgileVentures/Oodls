@@ -7,7 +7,6 @@ feature 'User signing up' do
 		click_link 'I\'m a Charity'
 		expect(current_path).to eq '/charity'
 		expect(page).to have_content 'Sign up'
-		expect(page).to have_content 'Sign in'
 	end
 
 	scenario 'should see sign up form' do

@@ -10,7 +10,6 @@ feature 'User signing in' do
 
   scenario 'should be able to go to a sign in page' do
     visit '/charity'
-    click_link 'Sign in'
     expect(page).to have_content 'Email'
     expect(page).to have_content 'Password'
   end

@@ -1,20 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'data_mapper'
-gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'bcrypt-ruby'
-gem 'sinatra-partial'
+gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'data_mapper'
+gem 'dm-paperclip'
+gem 'dm-postgres-adapter'
+gem 'dotenv'
+gem 'mandrill-api'
 gem 'rack-flash3'
+gem 'sinatra'
 gem 'sinatra-flash'
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'sinatra-partial'
 
 group :development, :test do
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
   gem 'database_cleaner'
+  gem 'excon'
   gem 'launchy'
   gem 'rspec'
 end

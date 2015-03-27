@@ -1,4 +1,10 @@
 <% if !current_user %>
+  <form action='/charity/signin' method='post'>
+    Email: <input type='text' name='email' placeholder='Email'><br>
+    Password: <input type='password' name='password' placeholder='Password'><br>
+    <input type='submit' value='Sign in'>
+  </form>
+  <a href='/charity/request_token'>Forgot password?</a>
+  or
   <a href="/charity/signup">Sign up</a>
-  <a href="/charity/signin">Sign in</a>
 <% end %>

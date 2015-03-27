@@ -22,14 +22,13 @@ end
 
 def sign_in
   visit '/charity'
-  click_link 'Sign in'
   fill_in :email, :with => 'test@test.com'
   fill_in :password, :with => 'password'
   click_button 'Sign in'
 end
 
 def sign_in_wrong_details
-  visit '/charity/signin'
+  visit '/charity'
   fill_in :email, :with => 'test@test.com'
   fill_in :password, :with => 'wrong'
   click_button 'Sign in'
@@ -41,4 +40,15 @@ def edit_account_details
 	fill_in :contact_name, :with => 'edited test name'
 	fill_in :email, :with => 'edited_test@test.com'
 	click_button 'Save changes'
+end
+
+def reset_password
+  visit '/charity'
+  click_link 'Forgot password'
+  fill_in :email, :with => 'test@test.com'
+  click_button 'Send request'
+  visit '/charity/reset_password/' + User.first.token
+  fill_in :password, :with => 'newpassword'
+  fill_in :password_confirmation, :with => 'newpassword'
+  click_button 'Save'
 end
